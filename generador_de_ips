@@ -1,0 +1,21 @@
+#este script genera direcciones ips y las muestra en consola y en un archivo txt una ip por linea
+
+import random 
+
+num=int(input("Inserte numero de IPs: "))
+if num<=0:
+    print("\nFin")
+i=1
+ips=[]
+while i<=num:
+    ip="{}.{}.{}.{}".format(random.randint(0,255),random.randint(0,255),random.randint(0,255),random.randint(0,255))
+    ips.append(ip)
+    i+=1
+    print("\n")
+
+file = open("C:\\Users\\raulm\\OneDrive\\Desktop\\Python\\lista_ip.txt", "w")
+for i in ips:
+    file.write(str(i)+"\n")
+    print(i)
+file.close()
+print("\nFin")
